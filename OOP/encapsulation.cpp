@@ -2,7 +2,9 @@
 
 using namespace std;
 
+
 class encapsulation
+// Encapsulation=> hide "sensitive" data from users. 
 {
 private:
     int a;
@@ -17,6 +19,7 @@ public:
     {
         cout << b << endl;
     }
+    // To modify the value of a private member use public get and set methods.
     void set_a(int s){
         a=s;
     }
