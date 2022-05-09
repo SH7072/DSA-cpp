@@ -2,6 +2,12 @@
 
 using namespace std;
 
+void printArray(int arr[],int n){
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i]<<" ";
+    }
+}
 void SelectionSort(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -14,10 +20,7 @@ void SelectionSort(int arr[], int n)
             }
         }
     }
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i]<<" ";
-    }
+    printArray(arr,n);
 }
 
 int main()
