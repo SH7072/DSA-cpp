@@ -1,2 +1,4 @@
 # DSA-cpp
-ad course + hacker rank questiions
+
+DSA implementations in c++ + questions
+
