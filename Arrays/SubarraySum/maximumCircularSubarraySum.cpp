@@ -22,13 +22,17 @@ void maximumCircularSubarraySum(int arr[], int n)
 {
     int nonWrapSum = kadaneAlgorithm(arr, n);
     int wrapSum = 0;
-    
+    int maxSum=INT_MIN;    
     int sum=0;
     for (int i = 0; i < n; i++)
     {
         sum += arr[i];
-    
+        arr[i]=(-arr[i]);
     }
+    wrapSum=sum+kadaneAlgorithm(arr,n);//arr with all elements with opp sign
+
+    maxSum=max(wrapSum,nonWrapSum);
+    cout<<maxSum;
 }
 
 int main()
