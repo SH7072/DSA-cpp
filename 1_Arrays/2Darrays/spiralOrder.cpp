@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-
+// [[1,2,3,4],[5,6,7,8],[9,10,11,12]] this Test Case will give wrong result
     int n, m;
     cin >> n >> m;
     int arr[n][m];
@@ -46,12 +46,13 @@ int main()
         row_end--;
 
         //first column
+        if (column_start <= column_end) {//condition add for test case type matrix
         for (int i = row_end; i >= row_start; i--)
         {
             cout<<arr[i][column_start]<<" ";
         }
         column_start++;
-
+        }
 
 
     }
