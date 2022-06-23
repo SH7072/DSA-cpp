@@ -27,7 +27,7 @@ void reverseStack(stack<int> &st)
     reverseStack(st);
     insertAtBottom(st, ele);
 }
-void prefixEval(string s)
+int prefixEval(string s)
 {
 
     stack<int> st;
@@ -36,34 +36,48 @@ void prefixEval(string s)
     {
         if (s[i] >= '0' && s[i] <= '9')
         {
-            st.push(s[i]-'0')
+            st.push(s[i]-'0');
         }
         else
         {
-            st.po
+            int op1=st.top();
+            st.pop();
+            int op2=st.top();
+            st.pop();
+            
+            switch (s[i])
+            {
+            case '+':
+                st.push(op1+op2);
+                break;
+            case '-':
+                st.push(op1-op2);
+                break;
+            case '*':
+                st.push(op1*op2);
+                break;
+            case '/':
+                st.push(op1/op2);
+                break;
+            case '^':
+                st.push(pow(op1,op2));
+                break;
+            
+            default:
+                break;
+            }
         }
         
     }
+
+    return st.top();
 }
 int main()
 {
 
-    stack<int> st1;
-    st1.push(1);
-    st1.push(14);
-    st1.push(15);
-    st1.push(51);
-    st1.push(71);
-    st1.push(8);
 
-    prefixEval(st1);
+cout<< prefixEval("-+7*45+20");
 
-    // print stack
-    //  while (!st1.empty())
-    //  {
-    //      cout<<st1.top()<<" ";
-    //      st1.pop();
-    //  }cout<<endl;
 
     return 0;
 }
