@@ -1,7 +1,6 @@
 # DSA-cpp
 
-This repository contains DSA implementations in c++ 
-& selected questions for various coding platforms.
+This repository contains DSA implementations in c++.
 
-Feel free to contribute...
+Feel free to contribute
 
