@@ -32,7 +32,7 @@ Node *constructTree(int preorder[], int inorder[], int start, int end)
     int curr = preorder[idx];
     idx++;
 
-    if(start>end)
+    if (start > end)
     {
         return NULL;
     }
@@ -50,13 +50,13 @@ Node *constructTree(int preorder[], int inorder[], int start, int end)
     return node;
 }
 void inorderPrint(Node *root)
-{   
-    if(root==NULL)
+{
+    if (root == NULL)
     {
         return;
     }
     inorderPrint(root->left);
-    cout << root->data<<" ";
+    cout << root->data << " ";
     inorderPrint(root->right);
 }
 

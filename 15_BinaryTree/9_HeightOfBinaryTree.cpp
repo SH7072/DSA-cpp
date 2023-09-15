@@ -1,4 +1,4 @@
-//time- O(n)
+// time- O(n)
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,15 +17,15 @@ struct Node
     }
 };
 
-int calcHeight(Node* root)
+int calcHeight(Node *root)
 {
-    if(root==NULL){
+    if (root == NULL)
+    {
         return 0;
     }
-    
-    return max(calcHeight(root->left),calcHeight(root->right))+1;
-}
 
+    return max(calcHeight(root->left), calcHeight(root->right)) + 1;
+}
 
 int main()
 {
@@ -47,6 +47,6 @@ int main()
           4   5  6   7
     */
 
-    cout<<calcHeight(root);
+    cout << calcHeight(root);
     return 0;
 }

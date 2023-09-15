@@ -1,7 +1,7 @@
 // Diff b/w height of left sub tree and right
 // subtree is less than equal to 1
-// mod(leftht-rightht)<=1
-//Time: O(n^2)
+// mod(leftHt-rightHt)<=1
+// Time: O(n^2)
 
 #include <bits/stdc++.h>
 
@@ -20,7 +20,6 @@ struct Node
         right = NULL;
     }
 };
-
 
 int height(Node *root)
 {
@@ -86,11 +85,11 @@ int main()
           4   5  6   7
     */
 
-    cout<<isBalanced(root)<<endl;
+    cout << isBalanced(root) << endl;
 
-    Node* root2=new Node(1);
-    root2->left=new Node(2);
-    root2->left->left=new Node(3);
-    cout<<isBalanced(root2)<<endl;
+    Node *root2 = new Node(1);
+    root2->left = new Node(2);
+    root2->left->left = new Node(3);
+    cout << isBalanced(root2) << endl;
     return 0;
 }

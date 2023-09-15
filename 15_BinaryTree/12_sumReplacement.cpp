@@ -17,33 +17,35 @@ struct Node
         right = NULL;
     }
 };
- 
+
 void sumReplacement(Node *root)
 {
 
     if (root == NULL)
     {
-        return ;
+        return;
     }
 
     sumReplacement(root->left);
     sumReplacement(root->right);
-    
-    if(root->left!=NULL){
-        root->data+=root->left->data;
-    }
-    if(root->right!=NULL)
+
+    if (root->left != NULL)
     {
-        root->data+=root->right->data;
+        root->data += root->left->data;
+    }
+    if (root->right != NULL)
+    {
+        root->data += root->right->data;
     }
 }
 
-void printPreorder(Node* root)
+void printPreorder(Node *root)
 {
-    if(root==NULL){
+    if (root == NULL)
+    {
         return;
     }
-    cout<<root->data<<" ";
+    cout << root->data << " ";
     printPreorder(root->left);
     printPreorder(root->right);
 }
@@ -68,7 +70,7 @@ int main()
     */
 
     printPreorder(root);
-    cout<<endl;
+    cout << endl;
     sumReplacement(root);
     printPreorder(root);
 

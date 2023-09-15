@@ -1,6 +1,6 @@
- // Diff b/w height of left sub tree and right
+// Diff b/w height of left sub tree and right
 // subtree is less than equal to 1
-// mod(leftht-rightht)<=1
+// mod(leftHt-rightHt)<=1
 
 #include <bits/stdc++.h>
 
@@ -20,7 +20,6 @@ struct Node
     }
 };
 
-
 int height(Node *root)
 {
     if (root == NULL)
@@ -34,7 +33,7 @@ int height(Node *root)
     return max(lh, rh) + 1;
 }
 
-bool isBalanced(Node *root,int* height)
+bool isBalanced(Node *root, int *height)
 {
 
     if (root == NULL)
@@ -42,19 +41,20 @@ bool isBalanced(Node *root,int* height)
         return true;
     }
 
-    int lh=0,rh=0;
-    if(isBalanced(root->left,&lh)==false){
+    int lh = 0, rh = 0;
+    if (isBalanced(root->left, &lh) == false)
+    {
 
         return false;
     }
-    if(isBalanced(root->right,&rh)==false)
+    if (isBalanced(root->right, &rh) == false)
     {
         return false;
     }
 
-    *height=max(lh,rh)+1;
+    *height = max(lh, rh) + 1;
 
-    if(abs(lh-rh)<=1)
+    if (abs(lh - rh) <= 1)
     {
         return true;
     }
@@ -62,7 +62,6 @@ bool isBalanced(Node *root,int* height)
     {
         return false;
     }
-    
 }
 
 int main()
@@ -84,14 +83,14 @@ int main()
            / \    / \
           4   5  6   7
     */
-   int height=0;
-    cout<<isBalanced(root,&height)<<endl;
+    int height = 0;
+    cout << isBalanced(root, &height) << endl;
 
-    Node* root2=new Node(1);
-    root2->left=new Node(2);
-    root2->left->left=new Node(3);
+    Node *root2 = new Node(1);
+    root2->left = new Node(2);
+    root2->left->left = new Node(3);
 
-    cout<<isBalanced(root2,&height)<<endl;
-    
+    cout << isBalanced(root2, &height) << endl;
+
     return 0;
 }

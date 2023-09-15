@@ -87,8 +87,7 @@ Node *LCA2(Node *root, int n1, int n2)
     {
         return leftLCA;
     }
-        return rightLCA;
-
+    return rightLCA;
 }
 
 int main()
@@ -113,11 +112,11 @@ int main()
                       \
                       10
     */
-   
+
     cout << LCA(root, 5, 10);
-    cout<<endl;
-    
-    Node* lca=LCA2(root,5,10);
-    cout<<lca->data<<" ";
+    cout << endl;
+
+    Node *lca = LCA2(root, 5, 10);
+    cout << lca->data << " ";
     return 0;
 }

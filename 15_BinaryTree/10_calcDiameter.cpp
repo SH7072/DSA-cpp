@@ -1,4 +1,4 @@
-//time- O(n^2)
+// time- O(n^2)
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,29 +17,30 @@ struct Node
     }
 };
 
-int calcHeight(Node* root)
+int calcHeight(Node *root)
 {
-    if(root==NULL){
-        return 0;
-    }
-    
-    return max(calcHeight(root->left),calcHeight(root->right))+1;
-}
-
-int calcDiameter(Node* root)
-{
-    if(root==NULL)
+    if (root == NULL)
     {
         return 0;
     }
-    int lHeight=calcHeight(root->left);
-    int rHeight=calcHeight(root->right);
-    int currDiameter=lHeight+rHeight+1;
 
-    int lDiameter=calcDiameter(root->left);
-    int rDiameter=calcDiameter(root->right);
+    return max(calcHeight(root->left), calcHeight(root->right)) + 1;
+}
 
-    return max(currDiameter,max(lDiameter,rDiameter));
+int calcDiameter(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    int lHeight = calcHeight(root->left);
+    int rHeight = calcHeight(root->right);
+    int currDiameter = lHeight + rHeight + 1;
+
+    int lDiameter = calcDiameter(root->left);
+    int rDiameter = calcDiameter(root->right);
+
+    return max(currDiameter, max(lDiameter, rDiameter));
 }
 
 int main()
@@ -62,6 +63,6 @@ int main()
           4   5  6   7
     */
 
-    cout<<calcDiameter(root);
+    cout << calcDiameter(root);
     return 0;
 }

@@ -1,4 +1,4 @@
- #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -16,13 +16,13 @@ struct Node
     }
 };
 
-int countNodes(Node* root)
+int countNodes(Node *root)
 {
-    if(root==NULL)
+    if (root == NULL)
     {
         return 0;
     }
-    return countNodes(root->left)+countNodes(root->right)+1;//+1 coz of root node
+    return countNodes(root->left) + countNodes(root->right) + 1; //+1 coz of root node
 }
 int main()
 {
@@ -44,6 +44,6 @@ int main()
           4   5  6   7
     */
 
-    cout<<countNodes(root);
+    cout << countNodes(root);
     return 0;
 }

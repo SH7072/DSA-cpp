@@ -22,7 +22,7 @@ void levelOrder(Node *root)
     {
         return;
     }
-    queue<Node*> q;
+    queue<Node *> q;
 
     q.push(root);
     q.push(NULL);
@@ -31,14 +31,15 @@ void levelOrder(Node *root)
     {
         Node *node = q.front();
         q.pop();
-        
+
         if (node != NULL)
         {
-            cout<<node->data<<" ";
-            if(node->left!=NULL){
+            cout << node->data << " ";
+            if (node->left != NULL)
+            {
                 q.push(node->left);
             }
-            if(node->right!=NULL)
+            if (node->right != NULL)
             {
                 q.push(node->right);
             }
@@ -47,7 +48,6 @@ void levelOrder(Node *root)
         {
             q.push(NULL);
         }
-        
     }
 }
 int main()
@@ -70,6 +70,6 @@ int main()
           4   5  6   7
     */
 
-   levelOrder(root);
+    levelOrder(root);
     return 0;
 }

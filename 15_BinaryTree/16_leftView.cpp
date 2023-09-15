@@ -36,7 +36,7 @@ void leftView(Node *root)
             Node *curr = q.front();
             q.pop();
 
-            if (i ==  1)
+            if (i == 1)
             {
                 cout << curr->data << " ";
             }
@@ -51,7 +51,41 @@ void leftView(Node *root)
         }
     }
 }
-
+// method 2
+vector<int> leftView2(Node *root)
+{
+    if (!root)
+    {
+        return {};
+    }
+    vector<int> ans;
+    queue<pair<Node *, int>> q;
+    int val = 1;
+    q.push({root, 1});
+    ans.push_back(root->data);
+    while (!q.empty())
+    {
+        auto it = q.front();
+        q.pop();
+        Node *curr = it.first;
+        int lvl = it.second;
+        if (lvl != val)
+        {
+            val = lvl;
+            // cout<<curr->data;
+            ans.push_back(curr->data);
+        }
+        if (curr->left)
+        {
+            q.push({curr->left, lvl + 1});
+        }
+        if (curr->right)
+        {
+            q.push({curr->right, lvl + 1});
+        }
+    }
+    return ans;
+}
 int main()
 {
 

@@ -16,8 +16,6 @@ struct Node
     }
 };
 
-
-
 int sumAtK(Node *root, int k)
 {
 
@@ -29,21 +27,23 @@ int sumAtK(Node *root, int k)
     q.push(root);
     q.push(NULL);
     int level = 0;
-    int sum=0;
+    int sum = 0;
     while (!q.empty())
     {
-        Node* node=q.front();
+        Node *node = q.front();
         q.pop();
-        if(node!=NULL)
-        {   if(level==k){
-            sum+=node->data;
-        }
+        if (node != NULL)
+        {
+            if (level == k)
+            {
+                sum += node->data;
+            }
             // cout<<node->data<<" ";
-            if(node->left!=NULL)
+            if (node->left != NULL)
             {
                 q.push(node->left);
             }
-            if(node->right!=NULL)
+            if (node->right != NULL)
             {
                 q.push(node->right);
             }
@@ -53,7 +53,6 @@ int sumAtK(Node *root, int k)
             q.push(NULL);
             level++;
         }
-        
     }
     return sum;
 }
@@ -77,6 +76,6 @@ int main()
           4   5  6   7
     */
 
-    cout<<sumAtK(root,2);
+    cout << sumAtK(root, 2);
     return 0;
 }

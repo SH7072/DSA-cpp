@@ -16,7 +16,6 @@ struct Node
     }
 };
 
-
 int searchPos(int arr[], int start, int end, int val)
 {
 
@@ -29,9 +28,7 @@ int searchPos(int arr[], int start, int end, int val)
     }
 
     return -1;
-
 }
-
 
 Node *postorderBuild(int postorder[], int inorder[], int start, int end)
 {
@@ -69,7 +66,6 @@ void inorderPrint(Node *root)
     inorderPrint(root->left);
     cout << root->data << " ";
     inorderPrint(root->right);
-
 }
 
 int main()
@@ -81,5 +77,4 @@ int main()
     root = postorderBuild(postorder, inorder, 0, 4);
     inorderPrint(root);
     return 0;
-
 }

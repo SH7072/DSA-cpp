@@ -1,4 +1,4 @@
- #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -16,13 +16,13 @@ struct Node
     }
 };
 
-int sumNodes(Node* root)
+int sumNodes(Node *root)
 {
-    if(root==NULL)
+    if (root == NULL)
     {
         return 0;
     }
-    return sumNodes(root->left)+sumNodes(root->right)+root->data;
+    return sumNodes(root->left) + sumNodes(root->right) + root->data;
 }
 int main()
 {
@@ -44,6 +44,6 @@ int main()
           4   5  6   7
     */
 
-    cout<<sumNodes(root);
+    cout << sumNodes(root);
     return 0;
 }
