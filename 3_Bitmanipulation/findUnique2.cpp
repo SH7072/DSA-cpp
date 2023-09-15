@@ -18,9 +18,10 @@
 
 using namespace std;
 
-int setBit(int n,int pos){
-    n=n>>pos;
-    return n&1;
+int setBit(int n, int pos)
+{
+    n = n >> pos;
+    return n & 1;
 }
 int getSetBit(int xorSum)
 {
@@ -50,20 +51,48 @@ void findTwoUniqueNos(int arr[], int n)
     int newxor;
     for (int i = 0; i < n; i++)
     {
-        if(setBit(arr[i],pos-1)==1){
-            newxor=newxor^arr[i];
+        if (setBit(arr[i], pos - 1) == 1)
+        {
+            newxor = newxor ^ arr[i];
         }
-
     }
-    int num2=xorSum^newxor;
-    cout<<num2<<" "<<newxor<<endl;
+    int num2 = xorSum ^ newxor;
+    cout << num2 << " " << newxor << endl;
 }
+// METHOD 2 same Ques 
+    vector<int> singleNumber(vector<int> &nums)
+    {
+        int n = nums.size();
+        long long xr = 0;
+        for (int i = 0; i < n; i++)
+        {
+            xr ^= nums[i];
+        }
+        int a = 0;
+        int b = 0;
+        long long prod = xr & (-xr);
+        // cout<<prod;
+        for (int i = 0; i < n; i++)
+        {
+            int c = prod & nums[i];
+            if (c == 0)
+            {
+                a ^= nums[i];
+            }
+            else
+            {
+                b ^= nums[i];
+            }
+        }
+        return {a, b};
+    }
+
 int main()
 {
 
-    int arr[10]={2,5,7,8,2,5,7,8,11,3};
+    int arr[10] = {2, 5, 7, 8, 2, 5, 7, 8, 11, 3};
 
-    cout<<setBit(4,3)<<endl;
-    findTwoUniqueNos(arr,10) ;
+    cout << setBit(4, 3) << endl;
+    findTwoUniqueNos(arr, 10);
     return 0;
 }
